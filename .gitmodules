@@ -1,3 +1,6 @@
 [submodule "rvmini_opcodes"]
 	path = rvmini_opcodes
 	url = https://github.com/jingpoyan/rvmini_opcodes.git
+[submodule "gem5"]
+	path = gem5
+	url = ./gem5
