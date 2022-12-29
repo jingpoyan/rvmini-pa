@@ -8,4 +8,5 @@ git submodule update --init --recursive
 
 The following subprojects/components are included.
 * [rvmini_opcodes](https://github.com/jingpoyan/rvmini_opcodes.git)
+* [gem5](https://gem5.googlesource.com/public/gem5)
 
