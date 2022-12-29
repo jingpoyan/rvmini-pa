@@ -3,4 +3,4 @@
 	url = https://github.com/jingpoyan/rvmini_opcodes.git
 [submodule "gem5"]
 	path = gem5
-	url = ./gem5
+	url = https://gem5.googlesource.com/public/gem5
