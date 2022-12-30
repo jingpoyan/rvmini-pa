@@ -4,3 +4,6 @@
 [submodule "gem5"]
 	path = gem5
 	url = https://gem5.googlesource.com/public/gem5
+[submodule "riscv-mini"]
+	path = riscv-mini
+	url = https://github.com/jingpoyan/riscv-mini.git
