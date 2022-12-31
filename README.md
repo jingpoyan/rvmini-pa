@@ -15,21 +15,33 @@ sudo apt-get install sbt -y
 
 To initialize, run
 ```bash
+git clone https://github.com/jingpoyan/rvmini-pa.git
 git submodule update --init --recursive
 ```
-To build riscv-mini, run
+To build riscv-tools-priv1.7, run
 ```bash
+export RISCV=/path/to/install/dir
+export PATH=$RISCV/bin:$PATH
+
 cd riscv-mini
-export RISCV=~/riscv32_priv1.7_tools
-./build-riscv-tools
-git clone https://github.com/verilator/verilator.git
-cd verilator
-git checkout v4.216
-autoconf
-./configure
+bash download-riscv-tools.sh
+
+# build riscv-gnu-toolchain-priv1.7
+cd riscv-tools-priv1.7/riscv-gnu-toolchain/
+./configure --prefix=$RISCV --with-xlen=32
 make -j8
-cd ..
-make
+
+# build riscv-fesvr
+cd ../riscv-fesvr/
+./configure --prefix=$RISCV
+make -j8
+make install
+
+# build riscv-tests(ISA and benchmarks)
+cd ../riscv-tests/isa/
+make RISCV_PREFIX=riscv32-unknown-elf- XLEN=32
+cd ../benchmarks/
+make RISCV_PREFIX=riscv32-unknown-elf- XLEN=32
 ```
 To build gem5, run
 ```
