@@ -28,6 +28,8 @@ git checkout v4.216
 autoconf
 ./configure
 make -j8
+cd ..
+make
 ```
 To build gem5, run
 ```
