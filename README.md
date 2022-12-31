@@ -16,6 +16,7 @@ sudo apt-get install sbt -y
 To initialize, run
 ```bash
 git clone https://github.com/jingpoyan/rvmini-pa.git
+cd rvmini-pa
 git submodule update --init --recursive
 ```
 To build riscv-tools-priv1.7, run
