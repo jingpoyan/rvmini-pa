@@ -17,10 +17,18 @@ To initialize, run
 ```bash
 git submodule update --init --recursive
 ```
-
-
+To build riscv-mini, run
+```bash
+cd riscv-mini
+export RISCV=~/riscv32_priv1.7_tools
+./build-riscv-tools
+```
+To build gem5, run
+```
+cd gem5
+python3 `which scons` build/RISCV/gem5.opt -j8
+```
 The following subprojects/components are included.
 * [riscv-mini](https://github.com/jingpoyan/riscv-mini.git)
 * [rvmini_opcodes](https://github.com/jingpoyan/rvmini_opcodes.git)
 * [gem5](https://gem5.googlesource.com/public/gem5)
-
