@@ -22,6 +22,12 @@ To build riscv-mini, run
 cd riscv-mini
 export RISCV=~/riscv32_priv1.7_tools
 ./build-riscv-tools
+git clone https://github.com/verilator/verilator.git
+cd verilator
+git checkout v4.216
+autoconf
+./configure
+make -j8
 ```
 To build gem5, run
 ```
