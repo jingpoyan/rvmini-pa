@@ -44,6 +44,17 @@ make RISCV_PREFIX=riscv32-unknown-elf- XLEN=32
 cd ../benchmarks/
 make RISCV_PREFIX=riscv32-unknown-elf- XLEN=32
 ```
+To build verilator, run
+```bash
+cd ~/
+git clone https://github.com/verilator/verilator.git
+cd verilator
+git checkout v4.216
+autoconf
+./configure
+make -j8
+sudo make install
+```
 To build gem5, run
 ```
 cd gem5
